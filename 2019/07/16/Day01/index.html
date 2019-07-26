@@ -1,0 +1,108 @@
+<!DOCTYPE html><html lang="Chinese"><head><meta name="generator" content="Hexo 3.9.0"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><title>Day01 | Kevin</title><meta name="description" content="Day01"><meta name="keywords" content="实习"><meta name="author" content="Kevin"><meta name="copyright" content="Kevin"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon.ico"><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="canonical" href="http://kevinnnm.github.io/2019/07/16/Day01/"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Day01"><meta name="twitter:description" content="Day01"><meta name="twitter:image" content="https://i.loli.net/2019/07/17/5d2e73bb14bd344648.png"><meta property="og:type" content="article"><meta property="og:title" content="Day01"><meta property="og:url" content="http://kevinnnm.github.io/2019/07/16/Day01/"><meta property="og:site_name" content="Kevin"><meta property="og:description" content="Day01"><meta property="og:image" content="https://i.loli.net/2019/07/17/5d2e73bb14bd344648.png"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="prev" title="Day03" href="http://kevinnnm.github.io/2019/07/16/Day03/"><link rel="next" title="Day02" href="http://kevinnnm.github.io/2019/07/15/Day02/"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":1,"translateDelay":0,"cookieDomain":"https://liuyaanng.github.io/","msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  highlight_copy: 'true',
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  bookmark: {
+    title: 'Bookmark',
+    message_prev: 'Press',
+    message_next: 'to bookmark this page'
+  },
+  runtime_unit: 'days'
+
+  
+}</script></head><body><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div class="auto_open" id="sidebar"><div class="sidebar-toc"><div class="sidebar-toc__title">Catalog</div><div class="sidebar-toc__progress"><span class="progress-notice">You've read</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Digital-Image-Processing-notes"><span class="toc-number">1.</span> <span class="toc-text">Digital Image Processing notes:</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#数字图像基础"><span class="toc-number">1.1.</span> <span class="toc-text">数字图像基础</span></a></li></ol></li></ol></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(https://i.loli.net/2019/07/17/5d2e73bb14bd344648.png)"><div id="page-header"><span class="pull-left"> <a class="blog_title" id="site-name" href="/">Kevin</a></span><div class="open toggle-menu pull-right"><div class="menu-icon-first"></div><div class="menu-icon-second"></div><div class="menu-icon-third"></div></div><span class="pull-right menus"><div class="mobile_author_icon"><img class="lozad" data-src="https://i.loli.net/2019/07/20/5d32de0f6ab5577427.jpg" onerror="onerror=null;src='/img/friend_404.gif'"><div class="mobile_author-info__description">One love, one lifetime</div></div><hr><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 活动</span></a><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友情链接</span></a><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于</span></a><script>document.body.addEventListener('touchstart', function(){ });</script></div></span><span class="pull-right"></span></div><div id="post-info"><div id="post-title"><div class="posttitle">Day01</div></div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> Created 2019-07-16<span class="post-meta__separator">|</span><i class="fa fa-history" aria-hidden="true"></i> Updated 2019-07-25</time></div></div></div><div class="layout layout_post" id="content-inner">   <article id="post"><div class="article-container" id="post-content"><h2 id="Digital-Image-Processing-notes"><a href="#Digital-Image-Processing-notes" class="headerlink" title="Digital Image Processing notes:"></a>Digital Image Processing notes:</h2><ul>
+<li>图像处理的步骤：<ol>
+<li>图像获取 包括图像预处理</li>
+<li>图像滤波与增强 使之适用于==特定应用==</li>
+<li>图像复原 倾向于以图像退化的数学或概率模型为基础</li>
+<li>彩色图像处理</li>
+<li>压缩 减少图像存储量或降低传输图像带宽 </li>
+<li>形态学处理</li>
+<li>图像分割</li>
+<li>目标识别<h3 id="数字图像基础"><a href="#数字图像基础" class="headerlink" title="数字图像基础"></a>数字图像基础</h3></li>
+</ol>
+</li>
+<li>灰度概念<br>  灰度是表明图像明暗的数值，即黑白图像中点的颜色深度，范围一般是0-255,白色为255,黑色为0,归一化处理之后[0,1],0代表黑色，1代表白色。</li>
+<li>图像取样与量化<ul>
+<li>对坐标值数字化称为取样，对幅度值数字化称为量化</li>
+</ul>
+</li>
+<li>数字的图像表示<br>  将连续图像取样表示为一个二维阵列f(x,y)<ol>
+<li>函数图表示：用x和y两个坐标轴来表示空间位置，第三个坐标为f(灰度)值，即f(x,y,z)，</li>
+<li>一般的表示：显示的是f(x,y)在监视器或照片上的情况，每个点的灰度与该点处的f值成正比，例如归一化[0,1],三个等间隔点分别为0,0.5,1</li>
+<li>矩阵： 将f(x,y)的值打印成矩阵<br>注意坐标为右手笛卡尔系</li>
+</ol>
+</li>
+<li>对比度： 最高和最低的灰度级的差</li>
+<li><p>典型灰度级：</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2^k</span><br></pre></td></tr></table></figure>
+<p>  称为一副’k bit图像’</p>
+</li>
+<li><p>图像内插</p>
+<ul>
+<li>最邻近内插</li>
+<li>双线性内插</li>
+<li>双三次内插</li>
+</ul>
+</li>
+<li>图像处理的算术操作<ul>
+<li>图片相加  平均 -&gt; 降噪</li>
+<li>图片相减  增强图像差别</li>
+<li>图片想乘除  校正阴影</li>
+</ul>
+</li>
+<li>灰度变换<ul>
+<li>s = T(r)</li>
+<li>Matlab中的灰度变换函数<br>  imadjust(f,[LOW_IN,HIGH_IN],[LOW_OUT,HIGH_OUT],grmma)</li>
+</ul>
+</li>
+<li><p>直方图的处理和函数绘图</p>
+<ul>
+<li><p>生成图像的直方图</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; h = imhist(f)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>也可以用条形图来表示</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; h = imhist(f,25);</span><br><span class="line">&gt;&gt; horz = linespace(0,255,25);</span><br><span class="line">&gt;&gt; bar(horz,h)</span><br><span class="line">&gt;&gt; axis(0 255 0 60000);</span><br><span class="line">&gt;&gt; set(gca, &apos;xtick&apos;, 0:50:255)</span><br><span class="line">&gt;&gt; set(gca, &apos;ytick&apos;, 0:20000:60000)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>杆状图<br>stem(horz, z , ‘LineSpec’, ‘fill’)</p>
+</li>
+<li>plot函数<br>plot(horz, z, ‘LineSpec’)</li>
+<li>当处理函数句柄时<br>fplot(fhandle, limits, ‘LineSpec’)</li>
+</ul>
+</li>
+</ul>
+</div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">Kevin</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://kevinnnm.github.io/2019/07/16/Day01/">http://kevinnnm.github.io/2019/07/16/Day01/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/实习/">实习    </a></div><div class="post_share"><div class="social-share" data-image="https://i.loli.net/2019/07/17/5d2e73bb14bd344648.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script></div></div><div class="post-reward"><a class="reward-buttom"><i class="fa fa-qrcode"></i> Donate<div class="reward-main"><ul class="reward-all"><li class="reward-item"><img class="lozad post-qr-code__img" data-src="https://i.loli.net/2019/07/17/5d2ee553539c710575.jpg"><div class="post-qr-code__desc">微信</div></li><li class="reward-item"><img class="lozad post-qr-code__img" data-src="https://i.loli.net/2019/07/17/5d2ee5534468292943.jpg"><div class="post-qr-code__desc">支付宝</div></li></ul></div></a></div><nav class="pagination_post" id="pagination"><div class="prev-post pull-left"><a href="/2019/07/16/Day03/"><img class="prev_cover lozad" data-src="https://i.loli.net/2019/07/17/5d2e73bb14bd344648.png" onerror="onerror=null;src='/img/404.jpg'"><div class="label">Previous Post</div><div class="prev_info"><span>Day03</span></div></a></div><div class="next-post pull-right"><a href="/2019/07/15/Day02/"><img class="next_cover lozad" data-src="https://i.loli.net/2019/07/17/5d2e73bb14bd344648.png" onerror="onerror=null;src='/img/404.jpg'"><div class="label">Next Post</div><div class="next_info"><span>Day02</span></div></a></div></nav><div class="relatedPosts"><div class="relatedPosts_headline"><i class="fa fa-thumbs-up" aria-hidden="true"></i><span> Recommend</span></div><div class="relatedPosts_list"><div class="relatedPosts_item"><a href="/2019/07/16/Day03/" title="Day03"><img class="relatedPosts_cover lozad" data-src="https://i.loli.net/2019/07/17/5d2e73bb14bd344648.png"><div class="relatedPosts_title">Day03</div></a></div><div class="relatedPosts_item"><a href="/2019/07/15/Day02/" title="Day02"><img class="relatedPosts_cover lozad" data-src="https://i.loli.net/2019/07/17/5d2e73bb14bd344648.png"><div class="relatedPosts_title">Day02</div></a></div><div class="relatedPosts_item"><a href="/2019/07/17/Day04/" title="Day04"><img class="relatedPosts_cover lozad" data-src="https://i.loli.net/2019/07/17/5d2e73bb14bd344648.png"><div class="relatedPosts_title">Day04</div></a></div><div class="relatedPosts_item"><a href="/2019/07/19/Day06/" title="Day06"><img class="relatedPosts_cover lozad" data-src="https://i.loli.net/2019/07/17/5d2e73bb14bd344648.png"><div class="relatedPosts_title">Day06</div></a></div><div class="relatedPosts_item"><a href="/2019/07/18/Day05/" title="Day05"><img class="relatedPosts_cover lozad" data-src="https://i.loli.net/2019/07/17/5d2e73bb14bd344648.png"><div class="relatedPosts_title">Day05</div></a></div><div class="relatedPosts_item"><a href="/2019/07/20/Day07/" title="Day07"><img class="relatedPosts_cover lozad" data-src="https://i.loli.net/2019/07/17/5d2e73bb14bd344648.png"><div class="relatedPosts_title">Day07</div></a></div></div><div class="clear_both"></div></div></div></div><footer><div class="layout" id="footer"><div class="copyright">&copy;2019 By Kevin</div><div class="framework-info"><span>Driven </span><a href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>Theme </span><a href="https://github.com/jerryc127/hexo-theme-butterfly"><span>Butterfly</span></a></div><div class="footer_custom_text">Do what you should do!</div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><section class="rightside" id="rightside"><i class="fa fa-book" id="readmode" title="Read Mode"> </i><i class="fa fa-plus" id="font_plus" title="Increase font size"></i><i class="fa fa-minus" id="font_minus" title="Decrease font size"></i><a class="translate_chn_to_cht" id="translateLink" href="javascript:translatePage();" title="Traditional Chinese and Simplified Chinese Conversion">簡</a><i class="fa fa-moon-o nightshift" id="nightshift" title="Dark Mode"></i></section><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script><script src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+    processEscapes: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  },
+  CommonHTML: {
+    linebreaks: { automatic: true, width: "90% container" }
+  },
+  "HTML-CSS": { 
+    linebreaks: { automatic: true, width: "90% container" }
+  },
+  "SVG": { 
+    linebreaks: { automatic: true, width: "90% container" }
+  }
+});
+</script><script type="text/x-mathjax-config">MathJax.Hub.Queue(function() {
+  var all = MathJax.Hub.getAllJax(), i;
+  for (i=0; i < all.length; i += 1) {
+    all[i].SourceElement().parentNode.className += ' has-jax';
+  }
+});
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><script src="/js/nightshift.js"></script><script id="ribbon" src="https://cdn.jsdelivr.net/gh/jerryc127/CDN@latest/js/piao.js"></script><script src="/js/activate-power-mode.js"></script><script>POWERMODE.colorful = true; // make power mode colorful
+POWERMODE.shake = true; // turn off shake
+document.body.addEventListener('input', POWERMODE);
+</script><script src="/js/tw_cn.js"></script><script>translateInitilization()
+
+</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@1.2.2/instantpage.min.js" type="module"></script><script src="/node_modules/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"node_modules/live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/node_modules/live2dw/assets/shizuku.model.json"},"display":{"position":"right","width":250,"height":400},"mobile":{"show":true},"react":{"opacity":0.7}});</script></body></html>

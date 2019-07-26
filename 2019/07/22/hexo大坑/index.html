@@ -1,0 +1,70 @@
+<!DOCTYPE html><html lang="Chinese"><head><meta name="generator" content="Hexo 3.9.0"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><title>hexo大坑 | Kevin</title><meta name="description" content="hexo大坑"><meta name="keywords" content="hexo"><meta name="author" content="Kevin"><meta name="copyright" content="Kevin"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon.ico"><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="canonical" href="http://kevinnnm.github.io/2019/07/22/hexo大坑/"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="hexo大坑"><meta name="twitter:description" content="hexo大坑"><meta name="twitter:image" content="https://i.loli.net/2019/07/22/5d358d83b3a0315599.png"><meta property="og:type" content="article"><meta property="og:title" content="hexo大坑"><meta property="og:url" content="http://kevinnnm.github.io/2019/07/22/hexo大坑/"><meta property="og:site_name" content="Kevin"><meta property="og:description" content="hexo大坑"><meta property="og:image" content="https://i.loli.net/2019/07/22/5d358d83b3a0315599.png"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="prev" title="Day09" href="http://kevinnnm.github.io/2019/07/22/Day09/"><link rel="next" title="Day08" href="http://kevinnnm.github.io/2019/07/21/Day08/"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":1,"translateDelay":0,"cookieDomain":"https://liuyaanng.github.io/","msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  highlight_copy: 'true',
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  bookmark: {
+    title: 'Bookmark',
+    message_prev: 'Press',
+    message_next: 'to bookmark this page'
+  },
+  runtime_unit: 'days'
+
+  
+}</script></head><body><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div class="auto_open" id="sidebar"><div class="sidebar-toc"><div class="sidebar-toc__title">Catalog</div><div class="sidebar-toc__progress"><span class="progress-notice">You've read</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#坑一、Template-render-error-模板渲染错误"><span class="toc-number">1.</span> <span class="toc-text">坑一、Template render error 模板渲染错误</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#坑二、Markdown的空行"><span class="toc-number">2.</span> <span class="toc-text">坑二、Markdown的空行</span></a></li></ol></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(https://i.loli.net/2019/07/22/5d358d83b3a0315599.png)"><div id="page-header"><span class="pull-left"> <a class="blog_title" id="site-name" href="/">Kevin</a></span><div class="open toggle-menu pull-right"><div class="menu-icon-first"></div><div class="menu-icon-second"></div><div class="menu-icon-third"></div></div><span class="pull-right menus"><div class="mobile_author_icon"><img class="lozad" data-src="https://i.loli.net/2019/07/20/5d32de0f6ab5577427.jpg" onerror="onerror=null;src='/img/friend_404.gif'"><div class="mobile_author-info__description">One love, one lifetime</div></div><hr><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 活动</span></a><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友情链接</span></a><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于</span></a><script>document.body.addEventListener('touchstart', function(){ });</script></div></span><span class="pull-right"></span></div><div id="post-info"><div id="post-title"><div class="posttitle">hexo大坑</div></div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> Created 2019-07-22<span class="post-meta__separator">|</span><i class="fa fa-history" aria-hidden="true"></i> Updated 2019-07-25</time></div></div></div><div class="layout layout_post" id="content-inner">   <article id="post"><div class="article-container" id="post-content"><h2 id="坑一、Template-render-error-模板渲染错误"><a href="#坑一、Template-render-error-模板渲染错误" class="headerlink" title="坑一、Template render error 模板渲染错误"></a>坑一、Template render error 模板渲染错误</h2><p>写了一下午博文，高高兴兴地hexo g却发现报错了！<br><code>INFO  Start processing
+FATAL Something&#39;s wrong. Maybe you can find the solution here: https://hexo.io/docs/troubleshooting.html
+Nunjucks Error:  [Line 2, Column 6] unexpected token: }}
+ at formatNunjucksError (/home/kevin/blog/node_modules/hexo/lib/extend/tag.js:102:13)
+    at Promise.fromCallback.catch.err (/home/kevin/blog/node_modules/hexo/lib/extend/tag.js:124:34)
+    at tryCatcher (/home/kevin/blog/node_modules/bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/home/kevin/blog/node_modules/bluebird/js/release/promise.js:517:31)
+    at Promise._settlePromise (/home/kevin/blog/node_modules/bluebird/js/release/promise.js:574:18)
+    at Promise._settlePromise0 (/home/kevin/blog/node_modules/bluebird/js/release/promise.js:619:10)
+    at Promise._settlePromises (/home/kevin/blog/node_modules/bluebird/js/release/promise.js:695:18)
+    at _drainQueueStep (/home/kevin/blog/node_modules/bluebird/js/release/async.js:138:12)
+    at _drainQueue (/home/kevin/blog/node_modules/bluebird/js/release/async.js:131:9)
+    at Async._drainQueues (/home/kevin/blog/node_modules/bluebird/js/release/async.js:147:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (/home/kevin/blog/node_modules/bluebird/js/release/async.js:17:14)
+    at processImmediate (internal/timers.js:443:21)</code></p>
+<p>原因是nunjucks模板标签导致MD文件解析报错的问题，我试验了一下，在md文档中出现<code>双大括号</code>,<code>左大括号+#</code>,<code>左大括号+%</code>等都会报错(原谅我这么打，因为我打出来符号的话这篇博客就发不出来了)，下面是一位大神的<a href="http://xcoding.tech/2018/08/08/hexo/%E5%A6%82%E4%BD%95%E4%BB%8E%E6%A0%B9%E6%9C%AC%E8%A7%A3%E5%86%B3hexo%E4%B8%8D%E5%85%BC%E5%AE%B9%7B%7B%7D%7D%E6%A0%87%E7%AD%BE%E9%97%AE%E9%A2%98/" target="_blank" rel="noopener">解决办法</a>，他提供了几种解决办法，讲的很详细，可以参考一下</p>
+<p>我觉得有点麻烦就没采用(说多了就是菜～),下面是我的办法:</p>
+<ol>
+<li>既然出现上面的内容就会报错，那就尽量避免出现呗…(说的都是废话)</li>
+<li>使用<code>\lbrace</code>代替<code>\{</code>,使用<code>\rbrace</code>代替<code>\}</code><br>推荐大神的解决办法，一劳永逸，以后就不用管了</li>
+</ol>
+<h2 id="坑二、Markdown的空行"><a href="#坑二、Markdown的空行" class="headerlink" title="坑二、Markdown的空行"></a>坑二、Markdown的空行</h2><p>在写表格的时候要把表格体前后各空一行，不然你写的表格是这样式儿的，崩溃啊！<br><img src="https://i.loli.net/2019/07/22/5d358cfee55f989745.png" alt></p>
+<p>有可能是hexo解析的问题，我在使用markdown-preview的时候看的是正常的</p>
+</div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">Kevin</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://kevinnnm.github.io/2019/07/22/hexo大坑/">http://kevinnnm.github.io/2019/07/22/hexo大坑/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/hexo/">hexo    </a></div><div class="post_share"><div class="social-share" data-image="https://i.loli.net/2019/07/22/5d358d83b3a0315599.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script></div></div><div class="post-reward"><a class="reward-buttom"><i class="fa fa-qrcode"></i> Donate<div class="reward-main"><ul class="reward-all"><li class="reward-item"><img class="lozad post-qr-code__img" data-src="https://i.loli.net/2019/07/17/5d2ee553539c710575.jpg"><div class="post-qr-code__desc">微信</div></li><li class="reward-item"><img class="lozad post-qr-code__img" data-src="https://i.loli.net/2019/07/17/5d2ee5534468292943.jpg"><div class="post-qr-code__desc">支付宝</div></li></ul></div></a></div><nav class="pagination_post" id="pagination"><div class="prev-post pull-left"><a href="/2019/07/22/Day09/"><img class="prev_cover lozad" data-src="https://i.loli.net/2019/07/17/5d2e73bb14bd344648.png" onerror="onerror=null;src='/img/404.jpg'"><div class="label">Previous Post</div><div class="prev_info"><span>Day09</span></div></a></div><div class="next-post pull-right"><a href="/2019/07/21/Day08/"><img class="next_cover lozad" data-src="https://i.loli.net/2019/07/17/5d2e73bb14bd344648.png" onerror="onerror=null;src='/img/404.jpg'"><div class="label">Next Post</div><div class="next_info"><span>Day08</span></div></a></div></nav><div class="relatedPosts"><div class="relatedPosts_headline"><i class="fa fa-thumbs-up" aria-hidden="true"></i><span> Recommend</span></div><div class="relatedPosts_list"></div><div class="clear_both"></div></div></div></div><footer><div class="layout" id="footer"><div class="copyright">&copy;2019 By Kevin</div><div class="framework-info"><span>Driven </span><a href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>Theme </span><a href="https://github.com/jerryc127/hexo-theme-butterfly"><span>Butterfly</span></a></div><div class="footer_custom_text">Do what you should do!</div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><section class="rightside" id="rightside"><i class="fa fa-book" id="readmode" title="Read Mode"> </i><i class="fa fa-plus" id="font_plus" title="Increase font size"></i><i class="fa fa-minus" id="font_minus" title="Decrease font size"></i><a class="translate_chn_to_cht" id="translateLink" href="javascript:translatePage();" title="Traditional Chinese and Simplified Chinese Conversion">簡</a><i class="fa fa-moon-o nightshift" id="nightshift" title="Dark Mode"></i></section><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script><script src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+    processEscapes: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  },
+  CommonHTML: {
+    linebreaks: { automatic: true, width: "90% container" }
+  },
+  "HTML-CSS": { 
+    linebreaks: { automatic: true, width: "90% container" }
+  },
+  "SVG": { 
+    linebreaks: { automatic: true, width: "90% container" }
+  }
+});
+</script><script type="text/x-mathjax-config">MathJax.Hub.Queue(function() {
+  var all = MathJax.Hub.getAllJax(), i;
+  for (i=0; i < all.length; i += 1) {
+    all[i].SourceElement().parentNode.className += ' has-jax';
+  }
+});
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><script src="/js/nightshift.js"></script><script id="ribbon" src="https://cdn.jsdelivr.net/gh/jerryc127/CDN@latest/js/piao.js"></script><script src="/js/activate-power-mode.js"></script><script>POWERMODE.colorful = true; // make power mode colorful
+POWERMODE.shake = true; // turn off shake
+document.body.addEventListener('input', POWERMODE);
+</script><script src="/js/tw_cn.js"></script><script>translateInitilization()
+
+</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@1.2.2/instantpage.min.js" type="module"></script><script src="/node_modules/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"node_modules/live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/node_modules/live2dw/assets/shizuku.model.json"},"display":{"position":"right","width":250,"height":400},"mobile":{"show":true},"react":{"opacity":0.7}});</script></body></html>

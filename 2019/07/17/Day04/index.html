@@ -1,0 +1,98 @@
+<!DOCTYPE html><html lang="Chinese"><head><meta name="generator" content="Hexo 3.9.0"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><title>Day04 | Kevin</title><meta name="description" content="Day04"><meta name="keywords" content="实习"><meta name="author" content="Kevin"><meta name="copyright" content="Kevin"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon.ico"><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="canonical" href="http://kevinnnm.github.io/2019/07/17/Day04/"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Day04"><meta name="twitter:description" content="Day04"><meta name="twitter:image" content="https://i.loli.net/2019/07/17/5d2e73bb14bd344648.png"><meta property="og:type" content="article"><meta property="og:title" content="Day04"><meta property="og:url" content="http://kevinnnm.github.io/2019/07/17/Day04/"><meta property="og:site_name" content="Kevin"><meta property="og:description" content="Day04"><meta property="og:image" content="https://i.loli.net/2019/07/17/5d2e73bb14bd344648.png"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="prev" title="Day05" href="http://kevinnnm.github.io/2019/07/18/Day05/"><link rel="next" title="Day03" href="http://kevinnnm.github.io/2019/07/16/Day03/"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":1,"translateDelay":0,"cookieDomain":"https://liuyaanng.github.io/","msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  highlight_copy: 'true',
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  bookmark: {
+    title: 'Bookmark',
+    message_prev: 'Press',
+    message_next: 'to bookmark this page'
+  },
+  runtime_unit: 'days'
+
+  
+}</script></head><body><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div class="auto_open" id="sidebar"><div class="sidebar-toc"><div class="sidebar-toc__title">Catalog</div><div class="sidebar-toc__progress"><span class="progress-notice">You've read</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#频域滤波"><span class="toc-number">1.</span> <span class="toc-text">频域滤波</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二维傅里叶变换"><span class="toc-number">2.</span> <span class="toc-text">二维傅里叶变换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二维离散傅里叶变换"><span class="toc-number">3.</span> <span class="toc-text">二维离散傅里叶变换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MATLAB实现对图像的Fourier变换和逆变换"><span class="toc-number">4.</span> <span class="toc-text">MATLAB实现对图像的Fourier变换和逆变换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#对图像Fourier变换的意义分析"><span class="toc-number">5.</span> <span class="toc-text">对图像Fourier变换的意义分析</span></a></li></ol></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(https://i.loli.net/2019/07/17/5d2e73bb14bd344648.png)"><div id="page-header"><span class="pull-left"> <a class="blog_title" id="site-name" href="/">Kevin</a></span><div class="open toggle-menu pull-right"><div class="menu-icon-first"></div><div class="menu-icon-second"></div><div class="menu-icon-third"></div></div><span class="pull-right menus"><div class="mobile_author_icon"><img class="lozad" data-src="https://i.loli.net/2019/07/20/5d32de0f6ab5577427.jpg" onerror="onerror=null;src='/img/friend_404.gif'"><div class="mobile_author-info__description">One love, one lifetime</div></div><hr><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 活动</span></a><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友情链接</span></a><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于</span></a><script>document.body.addEventListener('touchstart', function(){ });</script></div></span><span class="pull-right"></span></div><div id="post-info"><div id="post-title"><div class="posttitle">Day04</div></div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> Created 2019-07-17<span class="post-meta__separator">|</span><i class="fa fa-history" aria-hidden="true"></i> Updated 2019-07-25</time></div></div></div><div class="layout layout_post" id="content-inner">   <article id="post"><div class="article-container" id="post-content"><h2 id="频域滤波"><a href="#频域滤波" class="headerlink" title="频域滤波"></a>频域滤波</h2><ol>
+<li>对图像平滑的低通滤波</li>
+<li>对图像锐化的高通滤波</li>
+<li>去除周期的选择性滤波</li>
+</ol>
+<h2 id="二维傅里叶变换"><a href="#二维傅里叶变换" class="headerlink" title="二维傅里叶变换"></a>二维傅里叶变换</h2><ul>
+<li><p>二维傅里叶变换:</p>
+<script type="math/tex; mode=display">F(u,v)=\int_{-\infty}^{\infty} \int_{-\infty}^{\infty} f(x,y)e^{-j2\pi(ux + vy)}\,\mathrm{d}x \mathrm{d}y</script></li>
+<li><p>二维傅里叶逆变换：</p>
+<script type="math/tex; mode=display">f(x,y) = \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} F(u,v)e^{j2\pi(ux + vy)}\,dxdy</script></li>
+</ul>
+<h2 id="二维离散傅里叶变换"><a href="#二维离散傅里叶变换" class="headerlink" title="二维离散傅里叶变换"></a>二维离散傅里叶变换</h2><p>f(x,y)代表一幅大小为M×N的图像，其中x=0,1,……,M-1,y=0,1,…..,N-1,DFT如下</p>
+<script type="math/tex; mode=display">F(u,v)=\int_{x=0}^{M-1} \int_{y=0}^{N-1} f(x,y)e^{-j2\pi(\frac{ux}{M}+\frac{vy}{N})}\,\mathrm{d}x \mathrm{d}y</script><p>IDFT：</p>
+<script type="math/tex; mode=display">f(x,y)=\frac{1}{MN}\int_{x=0}^{M-1} \int_{y=0}^{N-1} F(u,v)e^{j2\pi(\frac{ux}{M}+\frac{vy}{N})}\,\mathrm{d}x \mathrm{d}y</script><p>这里的F(u,v)被称为展开的傅里叶级数</p>
+<p>频域原点出的变换的值F(0,0)称为傅里叶变换的直流(dc)分量，F(0,0)等于f(0,0)平均值的MN倍。要注意的是在MATLAB中索引是从1开始的而不是从0开始的</p>
+<h2 id="MATLAB实现对图像的Fourier变换和逆变换"><a href="#MATLAB实现对图像的Fourier变换和逆变换" class="headerlink" title="MATLAB实现对图像的Fourier变换和逆变换"></a>MATLAB实现对图像的Fourier变换和逆变换</h2><ul>
+<li><p>Fourier变换，f为原图像</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; F = fft2(f);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Fourier谱</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; S = abs(F);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>该函数计算的是数组中每个元素的幅值( $ \sqrt{r^2+i^2} $ )<br>可以在这里观察到4个角的亮点，这就是周期特性的结果，不便观察</p>
+<ul>
+<li>将交换的原点移动到频域矩形的中心<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; Fc = fftshift(F)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>频谱范围大，不边观察</p>
+<ul>
+<li><p>取模，缩放</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">S2 = log(1 + abs(Fc));</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Fourier逆变换</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; f = ifft2(F);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>下面是完整代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">img=imread(&apos;moon.jpg&apos;);</span><br><span class="line">subplot(2,2,1);</span><br><span class="line">    imshow(img);</span><br><span class="line">    title(&apos;原图&apos;);</span><br><span class="line">    </span><br><span class="line">f=rgb2gray(img);    %对于RGB图像必须做的一步，也可以用im2double函数</span><br><span class="line">F=fft2(f);          %Fourier变换</span><br><span class="line">F1=log(abs(F)+1);   %取模,缩放</span><br><span class="line">subplot(2,2,2);</span><br><span class="line">    imshow(F1,[]);</span><br><span class="line">    title(&apos;傅里叶变换频谱图&apos;);</span><br><span class="line">    </span><br><span class="line">Fs=fftshift(F);      %将频谱图中零频率成分移动至频谱图中心</span><br><span class="line">S=log(abs(Fs)+1);    %取模并进行缩放</span><br><span class="line">subplot(2,2,3);</span><br><span class="line">    imshow(S,[]);</span><br><span class="line">    title(&apos;频移后的频谱图&apos;);</span><br><span class="line">    </span><br><span class="line">fr=real(ifft2(ifftshift(Fs)));  %频率域反变换到空间域，并取实部</span><br><span class="line">ret=im2uint8(mat2gray(fr));    %更改图像类型</span><br><span class="line">subplot(2,2,4);</span><br><span class="line">    imshow(ret);</span><br><span class="line">    title(&apos;逆傅里叶变换&apos;);</span><br></pre></td></tr></table></figure></p>
+<p>结果<br><img src="https://i.loli.net/2019/07/18/5d3043778b4e114553.jpg" alt><br>如果使用<code>&gt;&gt; f = im2double(img)</code>进行处理，则会出现以下结果<br><img src="https://i.loli.net/2019/07/18/5d304377bcc9554917.jpg" alt></p>
+<p>-分析    </p>
+<ol>
+<li>图像Fourier变换之后立即imshow会报错<br><img src="https://i.loli.net/2019/07/18/5d3043779bef722309.jpg" alt><br>这是因为经过fourier变换之后的图像矩阵为复数矩阵，包含实部和虚部，此时进行<code>abs(f)</code>取复数矩阵的模，再显示。</li>
+<li><code>rgb2gray()</code>和<code>im2double()</code>的使用<br>这一点要特别注意，对于RGB图像，<code>imread()</code>是已三维矩阵的形式来存储的，要先进行类型转换，否则会出现空白    </li>
+<li><code>rgb2gray()</code>转换为灰度图像,得到的图像呈灰色基调，见‘结果’</li>
+<li><code>im2double()</code>转换成双精度图像，得到的图像呈白色基调，见‘结果’<br>其他图像处理结果<br><img src="https://i.loli.net/2019/07/18/5d304377bd0c676784.jpg" alt></li>
+</ol>
+<p><img src="https://i.loli.net/2019/07/18/5d304377b0b2610307.jpg" alt><br>可以看到Fourier逆变换处理之后的图片为原图的灰度图片。</p>
+<h2 id="对图像Fourier变换的意义分析"><a href="#对图像Fourier变换的意义分析" class="headerlink" title="对图像Fourier变换的意义分析"></a>对图像Fourier变换的意义分析</h2><p>对于一个图像，其频率是表征图像中灰度变化剧烈程度的指标，是灰度在平面空间的梯度。设f为一个能量有限的模拟信号，其傅里叶变换代表f的频谱。从纯粹的数学意义上来看，Fourier变换是将一个函数转换成一系列的周期函数来进行处理的。从物理角度来看，Fourier变换是将图像从空间域转换到频率域，逆变换是将图像从频率域转换到空间域。也就是说，Fourier变换是将图像的灰度分布函数变换成图像的频率分布函数。==这里要注意是灰度分布函数==,下面还会说到。</p>
+<p>Fourie逆变换是将图像的频率分布函数转换成灰度分布函数(原始图像的灰度分布函数),图像的概念前边说过，用一个二维矩阵来表示空间上的各点，z=f(x,y)，但空间是三维的，因此空间上的物体在另一个维度上的关系必须由梯度来表示。</p>
+<p>Fourier频谱图上的明暗点，意义是指图像上的某一点与邻域点差异的强弱，即梯度的大小。</p>
+<p>对频谱移频到原点之后，可以看出图像的频率分布是以原点为圆心，对称分布的.</p>
+</div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">Kevin</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://kevinnnm.github.io/2019/07/17/Day04/">http://kevinnnm.github.io/2019/07/17/Day04/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/实习/">实习    </a></div><div class="post_share"><div class="social-share" data-image="https://i.loli.net/2019/07/17/5d2e73bb14bd344648.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script></div></div><div class="post-reward"><a class="reward-buttom"><i class="fa fa-qrcode"></i> Donate<div class="reward-main"><ul class="reward-all"><li class="reward-item"><img class="lozad post-qr-code__img" data-src="https://i.loli.net/2019/07/17/5d2ee553539c710575.jpg"><div class="post-qr-code__desc">微信</div></li><li class="reward-item"><img class="lozad post-qr-code__img" data-src="https://i.loli.net/2019/07/17/5d2ee5534468292943.jpg"><div class="post-qr-code__desc">支付宝</div></li></ul></div></a></div><nav class="pagination_post" id="pagination"><div class="prev-post pull-left"><a href="/2019/07/18/Day05/"><img class="prev_cover lozad" data-src="https://i.loli.net/2019/07/17/5d2e73bb14bd344648.png" onerror="onerror=null;src='/img/404.jpg'"><div class="label">Previous Post</div><div class="prev_info"><span>Day05</span></div></a></div><div class="next-post pull-right"><a href="/2019/07/16/Day03/"><img class="next_cover lozad" data-src="https://i.loli.net/2019/07/17/5d2e73bb14bd344648.png" onerror="onerror=null;src='/img/404.jpg'"><div class="label">Next Post</div><div class="next_info"><span>Day03</span></div></a></div></nav><div class="relatedPosts"><div class="relatedPosts_headline"><i class="fa fa-thumbs-up" aria-hidden="true"></i><span> Recommend</span></div><div class="relatedPosts_list"><div class="relatedPosts_item"><a href="/2019/07/16/Day01/" title="Day01"><img class="relatedPosts_cover lozad" data-src="https://i.loli.net/2019/07/17/5d2e73bb14bd344648.png"><div class="relatedPosts_title">Day01</div></a></div><div class="relatedPosts_item"><a href="/2019/07/16/Day03/" title="Day03"><img class="relatedPosts_cover lozad" data-src="https://i.loli.net/2019/07/17/5d2e73bb14bd344648.png"><div class="relatedPosts_title">Day03</div></a></div><div class="relatedPosts_item"><a href="/2019/07/15/Day02/" title="Day02"><img class="relatedPosts_cover lozad" data-src="https://i.loli.net/2019/07/17/5d2e73bb14bd344648.png"><div class="relatedPosts_title">Day02</div></a></div><div class="relatedPosts_item"><a href="/2019/07/19/Day06/" title="Day06"><img class="relatedPosts_cover lozad" data-src="https://i.loli.net/2019/07/17/5d2e73bb14bd344648.png"><div class="relatedPosts_title">Day06</div></a></div><div class="relatedPosts_item"><a href="/2019/07/18/Day05/" title="Day05"><img class="relatedPosts_cover lozad" data-src="https://i.loli.net/2019/07/17/5d2e73bb14bd344648.png"><div class="relatedPosts_title">Day05</div></a></div><div class="relatedPosts_item"><a href="/2019/07/20/Day07/" title="Day07"><img class="relatedPosts_cover lozad" data-src="https://i.loli.net/2019/07/17/5d2e73bb14bd344648.png"><div class="relatedPosts_title">Day07</div></a></div></div><div class="clear_both"></div></div></div></div><footer><div class="layout" id="footer"><div class="copyright">&copy;2019 By Kevin</div><div class="framework-info"><span>Driven </span><a href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>Theme </span><a href="https://github.com/jerryc127/hexo-theme-butterfly"><span>Butterfly</span></a></div><div class="footer_custom_text">Do what you should do!</div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><section class="rightside" id="rightside"><i class="fa fa-book" id="readmode" title="Read Mode"> </i><i class="fa fa-plus" id="font_plus" title="Increase font size"></i><i class="fa fa-minus" id="font_minus" title="Decrease font size"></i><a class="translate_chn_to_cht" id="translateLink" href="javascript:translatePage();" title="Traditional Chinese and Simplified Chinese Conversion">簡</a><i class="fa fa-moon-o nightshift" id="nightshift" title="Dark Mode"></i></section><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script><script src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+    processEscapes: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  },
+  CommonHTML: {
+    linebreaks: { automatic: true, width: "90% container" }
+  },
+  "HTML-CSS": { 
+    linebreaks: { automatic: true, width: "90% container" }
+  },
+  "SVG": { 
+    linebreaks: { automatic: true, width: "90% container" }
+  }
+});
+</script><script type="text/x-mathjax-config">MathJax.Hub.Queue(function() {
+  var all = MathJax.Hub.getAllJax(), i;
+  for (i=0; i < all.length; i += 1) {
+    all[i].SourceElement().parentNode.className += ' has-jax';
+  }
+});
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><script src="/js/nightshift.js"></script><script id="ribbon" src="https://cdn.jsdelivr.net/gh/jerryc127/CDN@latest/js/piao.js"></script><script src="/js/activate-power-mode.js"></script><script>POWERMODE.colorful = true; // make power mode colorful
+POWERMODE.shake = true; // turn off shake
+document.body.addEventListener('input', POWERMODE);
+</script><script src="/js/tw_cn.js"></script><script>translateInitilization()
+
+</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@1.2.2/instantpage.min.js" type="module"></script><script src="/node_modules/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"node_modules/live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/node_modules/live2dw/assets/shizuku.model.json"},"display":{"position":"right","width":250,"height":400},"mobile":{"show":true},"react":{"opacity":0.7}});</script></body></html>
